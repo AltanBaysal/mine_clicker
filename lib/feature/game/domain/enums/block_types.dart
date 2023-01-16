@@ -1,6 +1,7 @@
 //sıralamayı burda vermek mantıklı mı?
 
 //in order
+//???
 enum BlockTypes {
   coalOre,
   coalOreDeepslate,
@@ -16,4 +17,7 @@ enum BlockTypes {
   emeraldOre,
   emeraldOreDeepslate,
   emeraldBlock,
+  diamondOre,
+  diamondOreDeepslate,
+  diamondBlock,
 }
