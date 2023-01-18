@@ -11,7 +11,7 @@ Future<void> init() async {
 }
 
 void initFeatures() {
-  sl.registerFactory(() => GameProvider());
+  sl.registerLazySingleton<GameProvider>(() => GameProvider());
 }
 
 void initCore() {

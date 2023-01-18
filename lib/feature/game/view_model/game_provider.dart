@@ -8,13 +8,13 @@ class GameProvider with ChangeNotifier {
   Block get currentBlock => Blocks.inLevelOrder[currentLevel];
 
   void clickBlock() {
-    ingotCount = ingotCount + 1;
+    ingotCount++;
     print(ingotCount);
     notifyListeners();
   }
 
   void upgradeBlock() {
-    currentLevel += 1;
+    currentLevel++;
     print(currentLevel);
     notifyListeners();
   }

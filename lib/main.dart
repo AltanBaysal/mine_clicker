@@ -23,7 +23,6 @@ class MineClicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: (context, child) {
-        //? tam olarak ne işe yarıyor
         sl<ScreenSize>().screenSize = MediaQuery.of(context);
         return const GamePage();
       },
