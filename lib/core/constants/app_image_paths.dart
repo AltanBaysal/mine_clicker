@@ -1,42 +1,58 @@
 class AppImages {
   //blocks
-  static const String coalBlock = 'assets/blocks/coal_block.svg';
-  static const String coalOre = 'assets/blocks/coal_ore.svg';
-  static const String coalOreDeepslate = 'assets/blocks/deepslate_coal_ore.svg';
+  static const String blocksPath = 'assets/images/blocks/';
+  static const String coalBlock = '${blocksPath}coal_block.svg';
+  static const String coalOre = '${blocksPath}coal_ore.svg';
+  static const String coalOreDeepslate = '${blocksPath}deepslate_coal_ore.svg';
 
-  static const String copperBlock = 'assets/blocks/copper_block.svg';
-  static const String copperOre = 'assets/blocks/copper_ore.svg';
+  static const String copperBlock = '${blocksPath}copper_block.svg';
+  static const String copperOre = '${blocksPath}copper_ore.svg';
   static const String copperOreDeepslate =
-      'assets/blocks/deepslate_copper_ore.svg';
-  static const String rawCopperBlock = 'assets/blocks/raw_copper_block.svg';
+      '${blocksPath}deepslate_copper_ore.svg';
+  static const String rawCopperBlock = '${blocksPath}raw_copper_block.svg';
 
-  static const String ironBlock = 'assets/blocks/iron_block.svg';
-  static const String ironOre = 'assets/blocks/iron_ore.svg';
-  static const String ironOreDeepslate = 'assets/blocks/deepslate_iron_ore.svg';
-  static const String rawIronBlock = 'assets/blocks/raw_iron_block.svg';
+  static const String ironBlock = '${blocksPath}iron_block.svg';
+  static const String ironOre = '${blocksPath}iron_ore.svg';
+  static const String ironOreDeepslate = '${blocksPath}deepslate_iron_ore.svg';
+  static const String rawIronBlock = '${blocksPath}raw_iron_block.svg';
 
-  static const String emeraldBlock = 'assets/blocks/emerald_block.svg';
-  static const String emeraldOre = 'assets/blocks/emerald_ore.svg';
+  static const String emeraldBlock = '${blocksPath}emerald_block.svg';
+  static const String emeraldOre = '${blocksPath}emerald_ore.svg';
   static const String emeraldOreDeepslate =
-      'assets/blocks/deepslate_emerald_ore.svg';
+      '${blocksPath}deepslate_emerald_ore.svg';
 
-  static const String diamondBlock = 'assets/blocks/diamond_block.svg';
-  static const String diamondOre = 'assets/blocks/diamond_ore.svg';
+  static const String diamondBlock = '${blocksPath}diamond_block.svg';
+  static const String diamondOre = '${blocksPath}diamond_ore.svg';
   static const String diamondOreDeepslate =
-      'assets/blocks/deepslate_diamond_ore.svg';
+      '${blocksPath}deepslate_diamond_ore.svg';
 
   //tools
-  static const String netheritePickaxe = 'assets/blocks/netherite_pickaxe.svg';
-  static const String diamondPickaxe = 'assets/blocks/diamond_pickaxe.svg';
-  static const String goldenPickaxe = 'assets/blocks/golden_pickaxe.svg';
-  static const String ironPickaxe = 'assets/blocks/iron_pickaxe.svg';
-  static const String stonePickaxe = 'assets/blocks/stone_pickaxe.svg';
-  static const String woodenPickaxe = 'assets/blocks/wooden_pickaxe.svg';
+  static const String toolsPath = 'assets/images/items/';
+  static const String netheritePickaxe = '${toolsPath}netherite_pickaxe.svg';
+  static const String diamondPickaxe = '${toolsPath}diamond_pickaxe.svg';
+  static const String goldenPickaxe = '${toolsPath}golden_pickaxe.svg';
+  static const String ironPickaxe = '${toolsPath}iron_pickaxe.svg';
+  static const String stonePickaxe = '${toolsPath}stone_pickaxe.svg';
+  static const String woodenPickaxe = '${toolsPath}wooden_pickaxe.svg';
 
   //items
-  static const String coalIngot = 'assets/items/coal.svg';
-  static const String copperIngot = 'assets/items/copper_ingot.svg';
-  static const String ironIngot = 'assets/items/iron_ingot.svg';
-  static const String emeraldIngot = 'assets/items/emerald.svg';
-  static const String diamondIngot = 'assets/items/diamond.svg';
+  static const String itemsPath = 'assets/images/tools/';
+  static const String coalIngot = '${itemsPath}coal.svg';
+  static const String copperIngot = '${itemsPath}copper_ingot.svg';
+  static const String ironIngot = '${itemsPath}iron_ingot.svg';
+  static const String emeraldIngot = '${itemsPath}emerald.svg';
+  static const String diamondIngot = '${itemsPath}diamond.svg';
+
+  //Destroy effect
+  static const String destroyEffectPath = 'assets/images/destroy_effect/';
+  static const String destroyStage0 = '${destroyEffectPath}destroy_stage_0.svg';
+  static const String destroyStage1 = '${destroyEffectPath}destroy_stage_1.svg';
+  static const String destroyStage2 = '${destroyEffectPath}destroy_stage_2.svg';
+  static const String destroyStage3 = '${destroyEffectPath}destroy_stage_3.svg';
+  static const String destroyStage4 = '${destroyEffectPath}destroy_stage_4.svg';
+  static const String destroyStage5 = '${destroyEffectPath}destroy_stage_5.svg';
+  static const String destroyStage6 = '${destroyEffectPath}destroy_stage_6.svg';
+  static const String destroyStage7 = '${destroyEffectPath}destroy_stage_7.svg';
+  static const String destroyStage8 = '${destroyEffectPath}destroy_stage_8.svg';
+  static const String destroyStage9 = '${destroyEffectPath}destroy_stage_9.svg';
 }

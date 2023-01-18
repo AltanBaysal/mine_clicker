@@ -28,6 +28,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/blocks/
-    - assets/items/
-    - assets/tools/
+    - assets/images/blocks/
+    - assets/images/items/
+    - assets/images/tools/
+    - assets/images/destroy_effect/
