@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../core/constants/app_image_paths.dart';
+import 'package:provider/provider.dart';
 import '../../../../core/init/injection_container.dart';
 import '../../../../core/utils/screen_size.dart';
 import '../../view_model/game_provider.dart';
@@ -15,9 +15,13 @@ class BlockWidget extends StatelessWidget {
       child: SizedBox(
         height: sl<ScreenSize>().getWidthPercent(.4),
         width: sl<ScreenSize>().getWidthPercent(.4),
-        child: SvgPicture.asset(
-          AppImages.coalBlock,
-          fit: BoxFit.fitHeight,
+        child: Consumer<GameProvider>(
+          builder: (BuildContext context, GameProvider value, Widget? child) {
+            return SvgPicture.asset(
+              value.currentBlock.blockImage,
+              fit: BoxFit.contain,
+            );
+          },
         ),
       ),
     );

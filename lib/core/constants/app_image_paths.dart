@@ -35,8 +35,8 @@ class AppImages {
 
   //items
   static const String coalIngot = 'assets/items/coal.svg';
-  static const String copperIngot = 'assets/items/copper_ingot';
-  static const String ironIngot = 'assets/items/diamond.svg';
+  static const String copperIngot = 'assets/items/copper_ingot.svg';
+  static const String ironIngot = 'assets/items/iron_ingot.svg';
   static const String emeraldIngot = 'assets/items/emerald.svg';
-  static const String diamondIngot = 'assets/items/iron_ingot.svg';
+  static const String diamondIngot = 'assets/items/diamond.svg';
 }

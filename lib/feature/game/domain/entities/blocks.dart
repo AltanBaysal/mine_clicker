@@ -1,5 +1,27 @@
 import 'package:mine_clicker/core/constants/app_image_paths.dart';
 
+class Blocks {
+  static List<Block> get inLevelOrder => [
+        CoalOre(),
+        CoalOreDeepslate(),
+        CoalBlock(),
+        CopperOre(),
+        CopperOreDeepslate(),
+        RawCopperBlock(),
+        CopperBlock(),
+        IronOre(),
+        IronOreDeepslate(),
+        RawIronBlock(),
+        IronBlock(),
+        EmeraldOre(),
+        EmeraldOreDeepslate(),
+        EmeraldBlock(),
+        DiamondOre(),
+        DiamondOreDeepslate(),
+        DiamondBlock()
+      ];
+}
+
 abstract class Block {
   abstract String blockImage;
   abstract String ingotImage;

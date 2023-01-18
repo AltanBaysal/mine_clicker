@@ -16,7 +16,7 @@ class _GamePageState extends State<GamePage> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
