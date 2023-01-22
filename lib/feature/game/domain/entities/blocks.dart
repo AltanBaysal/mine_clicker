@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:mine_clicker/core/constants/app_image_paths.dart';
+import 'package:mine_clicker/core/constants/app_sound.dart';
 import 'package:mine_clicker/feature/game/domain/enums/block_types.dart';
 
 class Blocks {
@@ -28,6 +29,8 @@ class Blocks {
 abstract class Block {
   abstract String blockImage;
   abstract String ingotImage;
+  abstract String blockBreakingSound;
+  abstract String blockBreakSound;
   abstract IngotTypes ingotType;
   int get ingotDropRate;
   abstract int upgradeCost;
@@ -38,6 +41,11 @@ class CoalOre implements Block {
   String ingotImage = AppImages.coalIngot;
   @override
   String blockImage = AppImages.coalOre;
+  @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.coal;
   @override
@@ -52,6 +60,11 @@ class CoalOreDeepslate implements Block {
   @override
   String blockImage = AppImages.coalOreDeepslate;
   @override
+  String blockBreakSound = AppSound.deepslateBreake;
+  @override
+  String blockBreakingSound = AppSound.deepslateBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.coal;
   @override
   int upgradeCost = 40;
@@ -64,6 +77,11 @@ class CoalBlock implements Block {
   String ingotImage = AppImages.coalIngot;
   @override
   String blockImage = AppImages.coalBlock;
+  @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.coal;
   @override
@@ -78,6 +96,11 @@ class CopperOre implements Block {
   @override
   String blockImage = AppImages.copperOre;
   @override
+  String blockBreakSound = AppSound.copperBlockBreake;
+  @override
+  String blockBreakingSound = AppSound.copperBlockBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.copper;
   @override
   int upgradeCost = 10;
@@ -90,6 +113,11 @@ class CopperOreDeepslate implements Block {
   String ingotImage = AppImages.copperIngot;
   @override
   String blockImage = AppImages.copperOreDeepslate;
+  @override
+  String blockBreakSound = AppSound.copperBlockBreake;
+  @override
+  String blockBreakingSound = AppSound.copperBlockBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.copper;
   @override
@@ -104,6 +132,11 @@ class RawCopperBlock implements Block {
   @override
   String blockImage = AppImages.rawCopperBlock;
   @override
+  String blockBreakSound = AppSound.copperBlockBreake;
+  @override
+  String blockBreakingSound = AppSound.copperBlockBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.copper;
   @override
   int upgradeCost = 80;
@@ -116,6 +149,11 @@ class CopperBlock implements Block {
   String ingotImage = AppImages.copperIngot;
   @override
   String blockImage = AppImages.copperBlock;
+  @override
+  String blockBreakSound = AppSound.copperBlockBreake;
+  @override
+  String blockBreakingSound = AppSound.copperBlockBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.copper;
   @override
@@ -130,6 +168,11 @@ class IronOre implements Block {
   @override
   String blockImage = AppImages.ironBlock;
   @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.iron;
   @override
   int upgradeCost = 10;
@@ -142,6 +185,11 @@ class IronOreDeepslate implements Block {
   String ingotImage = AppImages.ironIngot;
   @override
   String blockImage = AppImages.ironOreDeepslate;
+  @override
+  String blockBreakSound = AppSound.deepslateBreake;
+  @override
+  String blockBreakingSound = AppSound.deepslateBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.iron;
   @override
@@ -156,6 +204,11 @@ class RawIronBlock implements Block {
   @override
   String blockImage = AppImages.rawIronBlock;
   @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.iron;
   @override
   int upgradeCost = 80;
@@ -168,6 +221,11 @@ class IronBlock implements Block {
   String ingotImage = AppImages.ironIngot;
   @override
   String blockImage = AppImages.ironBlock;
+  @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.iron;
   @override
@@ -182,6 +240,11 @@ class EmeraldOre implements Block {
   @override
   String blockImage = AppImages.emeraldOre;
   @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.emerald;
   @override
   int upgradeCost = 10;
@@ -194,6 +257,11 @@ class EmeraldOreDeepslate implements Block {
   String ingotImage = AppImages.emeraldIngot;
   @override
   String blockImage = AppImages.emeraldOreDeepslate;
+  @override
+  String blockBreakSound = AppSound.deepslateBreake;
+  @override
+  String blockBreakingSound = AppSound.deepslateBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.emerald;
   @override
@@ -208,6 +276,11 @@ class EmeraldBlock implements Block {
   @override
   String blockImage = AppImages.emeraldBlock;
   @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.emerald;
   @override
   int upgradeCost = 80;
@@ -220,6 +293,11 @@ class DiamondOre implements Block {
   String ingotImage = AppImages.diamondIngot;
   @override
   String blockImage = AppImages.diamondOre;
+  @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.diamond;
   @override
@@ -234,6 +312,11 @@ class DiamondOreDeepslate implements Block {
   @override
   String blockImage = AppImages.diamondOreDeepslate;
   @override
+  String blockBreakSound = AppSound.deepslateBreake;
+  @override
+  String blockBreakingSound = AppSound.deepslateBreaking;
+
+  @override
   IngotTypes ingotType = IngotTypes.diamond;
   @override
   int upgradeCost = 40;
@@ -246,6 +329,11 @@ class DiamondBlock implements Block {
   String ingotImage = AppImages.diamondIngot;
   @override
   String blockImage = AppImages.diamondBlock;
+  @override
+  String blockBreakSound = AppSound.stoneBreake;
+  @override
+  String blockBreakingSound = AppSound.stoneBreaking;
+
   @override
   IngotTypes ingotType = IngotTypes.diamond;
   @override

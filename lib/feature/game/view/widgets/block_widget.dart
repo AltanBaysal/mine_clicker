@@ -11,7 +11,8 @@ class BlockWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: sl<GameProvider>().clickBlock,
+      onLongPress: sl<GameProvider>().blockOnPress,
+      onLongPressCancel: sl<GameProvider>().blockOnPressCanceled,
       child: SizedBox(
         height: sl<ScreenSize>().getWidthPercent(.4),
         width: sl<ScreenSize>().getWidthPercent(.4),

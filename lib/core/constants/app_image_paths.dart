@@ -27,7 +27,7 @@ class AppImages {
       '${blocksPath}deepslate_diamond_ore.svg';
 
   //tools
-  static const String toolsPath = 'assets/images/items/';
+  static const String toolsPath = 'assets/images/tools/';
   static const String netheritePickaxe = '${toolsPath}netherite_pickaxe.svg';
   static const String diamondPickaxe = '${toolsPath}diamond_pickaxe.svg';
   static const String goldenPickaxe = '${toolsPath}golden_pickaxe.svg';
@@ -36,7 +36,7 @@ class AppImages {
   static const String woodenPickaxe = '${toolsPath}wooden_pickaxe.svg';
 
   //items
-  static const String itemsPath = 'assets/images/tools/';
+  static const String itemsPath = 'assets/images/items/';
   static const String coalIngot = '${itemsPath}coal.svg';
   static const String copperIngot = '${itemsPath}copper_ingot.svg';
   static const String ironIngot = '${itemsPath}iron_ingot.svg';

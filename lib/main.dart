@@ -31,3 +31,16 @@ class MineClicker extends StatelessWidget {
     );
   }
 }
+
+//ses
+//basılı tutunca kırılma
+//kazma
+//kendi kendine ilerleme
+//local save
+
+//audio
+//clean architecture
+//provider
+//responsive design
+//shared preferences
+//dependency injection
