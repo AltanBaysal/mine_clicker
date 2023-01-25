@@ -11,19 +11,47 @@ class BlockWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onLongPress: sl<GameProvider>().blockOnPress,
-      onLongPressCancel: sl<GameProvider>().blockOnPressCanceled,
-      child: SizedBox(
-        height: sl<ScreenSize>().getWidthPercent(.4),
-        width: sl<ScreenSize>().getWidthPercent(.4),
-        child: Consumer<GameProvider>(
-          builder: (BuildContext context, GameProvider value, Widget? child) {
-            return SvgPicture.asset(
-              value.currentBlock.blockImage,
-              fit: BoxFit.contain,
-            );
-          },
-        ),
+      onLongPressStart: sl<GameProvider>().blockOnPress,
+      onLongPressEnd: sl<GameProvider>().blockOnPressCanceled,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SizedBox(
+            height: sl<ScreenSize>().getWidthPercent(.4),
+            width: sl<ScreenSize>().getWidthPercent(.4),
+            child: Selector<GameProvider, String>(
+              selector: (final _, GameProvider value) =>
+                  value.currentBlock.blockImage,
+              builder: (
+                BuildContext context,
+                String value,
+                Widget? child,
+              ) {
+                return SvgPicture.asset(
+                  value,
+                  fit: BoxFit.contain,
+                );
+              },
+            ),
+          ),
+          SizedBox(
+            height: sl<ScreenSize>().getWidthPercent(.4),
+            width: sl<ScreenSize>().getWidthPercent(.4),
+            child: Selector<GameProvider, String>(
+              selector: (final _, GameProvider value) => value.blockBreakingSvg,
+              builder: (
+                BuildContext context,
+                String value,
+                Widget? child,
+              ) {
+                return SvgPicture.asset(
+                  value,
+                  fit: BoxFit.contain,
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

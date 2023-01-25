@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:mine_clicker/core/constants/app_image_paths.dart';
 import 'package:mine_clicker/core/constants/app_sound.dart';
 import 'package:mine_clicker/feature/game/domain/enums/block_types.dart';
@@ -22,7 +21,7 @@ class Blocks {
         EmeraldBlock(),
         DiamondOre(),
         DiamondOreDeepslate(),
-        DiamondBlock()
+        DiamondBlock(),
       ];
 }
 

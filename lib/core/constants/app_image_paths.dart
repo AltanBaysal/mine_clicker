@@ -55,4 +55,19 @@ class AppImages {
   static const String destroyStage7 = '${destroyEffectPath}destroy_stage_7.svg';
   static const String destroyStage8 = '${destroyEffectPath}destroy_stage_8.svg';
   static const String destroyStage9 = '${destroyEffectPath}destroy_stage_9.svg';
+  static const String destroyStage10 =
+      '${destroyEffectPath}destroy_stage_10.svg';
+  static const List<String> destroyStages = [
+    destroyStage0,
+    destroyStage1,
+    destroyStage2,
+    destroyStage3,
+    destroyStage4,
+    destroyStage5,
+    destroyStage6,
+    destroyStage7,
+    destroyStage8,
+    destroyStage9,
+    destroyStage10,
+  ];
 }

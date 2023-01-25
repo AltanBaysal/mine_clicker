@@ -15,4 +15,5 @@ class AppSound {
   //other
   static const String itemCollecting = '${_audioPath}item_collectingtest.mp3';
   static const String upgrade = '${_audioPath}upgrade.mp3';
+  static const String itemUpgrade = '${_audioPath}upgrade_item.mp3';
 }

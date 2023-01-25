@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 16 16" shape-rendering="crispEdges">
 <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
-<path stroke="rgba(255,255,255,0.00392156862745098)" d="M0 0h16M0 1h16M0 2h16M0 3h16M0 4h6M7 4h9M0 5h6M7 5h9M0 6h6M7 6h3M12 6h4M0 7h6M8 7h1M12 7h4M0 8h7M10 8h6M0 9h8M9 9h7M0 10h8M9 10h7M0 11h7M9 11h7M0 12h7M8 12h8M0 13h16M0 14h16M0 15h16" />
-<path stroke="#3d3d3d" d="M6 4h1M6 5h1M6 6h1M10 6h2M7 7h1M9 7h1M8 8h1M8 9h1M8 10h1M7 11h1" />
-<path stroke="#9b9b9b" d="M6 7h1M10 7h2M7 8h1M9 8h1M8 11h1M7 12h1" />
+<path stroke="#3d3d3d" d="M6 5h1M6 6h1M7 7h1M9 7h1M8 8h1M8 9h1" />
+<path stroke="#9b9b9b" d="M6 7h1M7 8h1M9 8h1M8 10h1" />
 </svg>

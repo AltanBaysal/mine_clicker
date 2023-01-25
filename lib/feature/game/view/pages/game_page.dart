@@ -3,6 +3,8 @@ import 'package:mine_clicker/feature/game/view/widgets/block_widget.dart';
 import 'package:mine_clicker/feature/game/view/widgets/upgrade_button.dart';
 import 'package:mine_clicker/feature/game/view_model/game_provider.dart';
 import 'package:provider/provider.dart';
+import '../../../../core/init/injection_container.dart';
+import '../../../../core/utils/screen_size.dart';
 import '../widgets/money_indicator.dart';
 
 class GamePage extends StatefulWidget {
@@ -38,8 +40,37 @@ class _GamePageState extends State<GamePage> {
                   },
                 ),
               ),
-              const BlockWidget(),
-              const UpgradeButton(),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: sl<ScreenSize>().getWidthPercent(.15),
+                ),
+                child: const BlockWidget(),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Consumer<GameProvider>(
+                    builder: (context, value, child) {
+                      return UpgradeButton(
+                        cost: value.currentBlock.upgradeCost.toString(),
+                        icon: value.currentBlock.ingotImage,
+                        onTap: value.upgradeBlock,
+                        nextItemImage: value.nextBlock.blockImage,
+                      );
+                    },
+                  ),
+                  Consumer<GameProvider>(
+                    builder: (context, value, child) {
+                      return UpgradeButton(
+                        cost: value.currentPickaxe.upgradeCost.toString(),
+                        icon: value.currentBlock.ingotImage,
+                        onTap: value.upgradePickaxe,
+                        nextItemImage: value.nextPickaxe.image,
+                      );
+                    },
+                  ),
+                ],
+              ),
             ],
           ),
         ),

@@ -1,9 +1,32 @@
 import 'package:audioplayers/audioplayers.dart';
 
 class SoundPlayer {
-  final _player = AudioCache();
+  final AudioPlayer audioPlayer = AudioPlayer();
+  late final AudioCache _player;
 
-  Future<void> play(String audio) async {
-    _player.play(audio);
+  SoundPlayer({ReleaseMode? releaseMode}) {
+    _player = AudioCache(fixedPlayer: audioPlayer);
+    if (releaseMode != null) {
+      audioPlayer.setReleaseMode(releaseMode);
+    }
+  }
+
+  Future<void> play(
+    String audio,
+  ) async {
+    final url = await _player.load(audio);
+    audioPlayer.play(url.path, isLocal: true);
+  }
+
+  Future<void> playAndWait(
+    String audio,
+    Duration duration,
+  ) async {
+    play(audio);
+    await Future.delayed(duration);
+  }
+
+  void pause() {
+    audioPlayer.stop();
   }
 }

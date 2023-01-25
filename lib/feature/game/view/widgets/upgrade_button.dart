@@ -1,46 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:mine_clicker/core/constants/app_texts.dart';
-import 'package:mine_clicker/core/constants/theme/app_text_styles.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mine_clicker/core/utils/screen_size.dart';
 import 'package:mine_clicker/feature/game/view/widgets/money_indicator.dart';
-import 'package:provider/provider.dart';
 import '../../../../core/init/injection_container.dart';
-import '../../view_model/game_provider.dart';
 
 class UpgradeButton extends StatelessWidget {
-  const UpgradeButton({super.key});
+  const UpgradeButton({
+    super.key,
+    this.onTap,
+    required this.nextItemImage,
+    required this.cost,
+    required this.icon,
+  });
+
+  final void Function()? onTap;
+  final String nextItemImage;
+  final String cost;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: sl<GameProvider>().upgradeBlock,
+      onTap: onTap,
       child: Card(
         elevation: 5,
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(50)),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: Container(
           padding: const EdgeInsets.all(8),
-          height: sl<ScreenSize>().getHeightPercent(0.07),
-          child: Row(
+          width: sl<ScreenSize>().getWidthPercent(0.3),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                AppTexts.upgrade,
-                style: AppTextStyles.titleMain20Semibold,
+              const SizedBox(
+                height: 10,
               ),
-              Consumer<GameProvider>(
-                builder: (
-                  BuildContext context,
-                  GameProvider value,
-                  Widget? child,
-                ) {
-                  return MoneyIndicator(
-                    size: Size.square(sl<ScreenSize>().getWidthPercent(.07)),
-                    ingotImage: value.currentBlock.ingotImage,
-                    text: value.currentBlock.upgradeCost.toString(),
-                  );
-                },
+              SizedBox.square(
+                dimension: sl<ScreenSize>().getHeightPercent(0.1),
+                child: SvgPicture.asset(
+                  nextItemImage,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              MoneyIndicator(
+                size: Size.square(sl<ScreenSize>().getWidthPercent(.07)),
+                ingotImage: icon,
+                text: cost,
               ),
             ],
           ),
