@@ -105,7 +105,6 @@ class GameProvider with ChangeNotifier {
     final upgradeSoundPlayer = SoundPlayer();
     upgradeSoundPlayer.play(AppSound.itemUpgrade);
     _currentPickaxeLevel++;
-    print(Pickaxes.inLevelOrder.length);
     notifyListeners();
   }
 }
