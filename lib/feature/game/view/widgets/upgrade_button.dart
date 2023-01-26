@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mine_clicker/core/utils/screen_size.dart';
-import 'package:mine_clicker/feature/game/view/widgets/money_indicator.dart';
-import '../../../../core/init/injection_container.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class UpgradeButton extends StatelessWidget {
   const UpgradeButton({

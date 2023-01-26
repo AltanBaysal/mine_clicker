@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:provider/provider.dart';
-import '../../../../core/init/injection_container.dart';
-import '../../../../core/utils/screen_size.dart';
-import '../../view_model/game_provider.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class BlockWidget extends StatelessWidget {
   const BlockWidget({super.key});

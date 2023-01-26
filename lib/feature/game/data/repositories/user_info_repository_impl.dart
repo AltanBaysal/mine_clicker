@@ -1,10 +1,5 @@
-import 'package:mine_clicker/core/error/exceptions.dart';
-import 'package:mine_clicker/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:mine_clicker/feature/game/data/datasources/user_info_local_data_source.dart';
-import 'package:mine_clicker/feature/game/data/models/user_info_model.dart';
-import 'package:mine_clicker/feature/game/domain/entities/user_info.dart';
-import 'package:mine_clicker/feature/game/domain/repo/user_info_repository.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class UserInfoRepositoryImpl implements UserInfoRepository {
   final UserInfoLocalDataSource localDataSource;

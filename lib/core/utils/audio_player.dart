@@ -1,4 +1,4 @@
-import 'package:audioplayers/audioplayers.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class SoundPlayer {
   final AudioPlayer audioPlayer = AudioPlayer();

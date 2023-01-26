@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class ScreenSize {
   late MediaQueryData screenSize;

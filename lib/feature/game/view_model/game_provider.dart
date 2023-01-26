@@ -1,16 +1,4 @@
-import 'dart:async';
-import 'dart:math';
-import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:mine_clicker/core/constants/app_image_paths.dart';
-import 'package:mine_clicker/core/constants/app_sound.dart';
-import 'package:mine_clicker/core/usecases/usecase.dart';
-import 'package:mine_clicker/core/utils/audio_player.dart';
-import 'package:mine_clicker/feature/game/domain/entities/pickaxe.dart';
-import 'package:mine_clicker/feature/game/domain/entities/user_info.dart';
-import 'package:mine_clicker/feature/game/domain/usecases/get_saved_user_info.dart';
-import 'package:mine_clicker/feature/game/domain/usecases/save_user_info.dart';
-import '../domain/entities/blocks.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class GameProvider with ChangeNotifier {
   //fields

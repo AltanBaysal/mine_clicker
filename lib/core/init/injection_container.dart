@@ -1,12 +1,4 @@
-import 'package:get_it/get_it.dart';
-import 'package:mine_clicker/core/utils/screen_size.dart';
-import 'package:mine_clicker/feature/game/data/datasources/user_info_local_data_source.dart';
-import 'package:mine_clicker/feature/game/data/repositories/user_info_repository_impl.dart';
-import 'package:mine_clicker/feature/game/domain/repo/user_info_repository.dart';
-import 'package:mine_clicker/feature/game/domain/usecases/get_saved_user_info.dart';
-import 'package:mine_clicker/feature/game/domain/usecases/save_user_info.dart';
-import 'package:mine_clicker/feature/game/view_model/game_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 final sl = GetIt.instance;
 

@@ -1,4 +1,4 @@
-import 'package:mine_clicker/feature/game/domain/entities/user_info.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class UserInfoModel extends UserInfo {
   UserInfoModel({

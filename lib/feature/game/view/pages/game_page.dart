@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:mine_clicker/feature/game/view/widgets/block_widget.dart';
-import 'package:mine_clicker/feature/game/view/widgets/upgrade_button.dart';
-import 'package:mine_clicker/feature/game/view_model/game_provider.dart';
-import 'package:provider/provider.dart';
-import '../../../../core/init/injection_container.dart';
-import '../../../../core/utils/screen_size.dart';
-import '../widgets/money_indicator.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class GamePage extends StatefulWidget {
   const GamePage({super.key});

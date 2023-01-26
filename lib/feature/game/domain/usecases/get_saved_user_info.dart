@@ -1,8 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:mine_clicker/feature/game/domain/entities/user_info.dart';
-import 'package:mine_clicker/feature/game/domain/repo/user_info_repository.dart';
-import '../../../../core/error/failures.dart';
-import '../../../../core/usecases/usecase.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class GetSavedUserInfo implements UseCase<UserInfo, NoParams> {
   final UserInfoRepository repository;

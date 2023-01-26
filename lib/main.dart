@@ -38,7 +38,7 @@ class MineClicker extends StatelessWidget {
 //ses +
 //basılı tutunca kırılma +
 //kazma +
-//local save
+//local save +
 //block breaking effect ekle
 
 

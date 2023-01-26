@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mine_clicker/core/constants/theme/app_text_styles.dart';
-import 'package:mine_clicker/core/utils/screen_size.dart';
-import '../../../../core/init/injection_container.dart';
+import 'package:mine_clicker/core/_core_exports.dart';
 
 class MoneyIndicator extends StatelessWidget {
   const MoneyIndicator({
