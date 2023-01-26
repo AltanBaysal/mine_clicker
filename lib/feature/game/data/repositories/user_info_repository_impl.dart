@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:mine_clicker/core/error/exceptions.dart';
 import 'package:mine_clicker/core/error/failures.dart';
 import 'package:dartz/dartz.dart';
@@ -16,15 +14,6 @@ class UserInfoRepositoryImpl implements UserInfoRepository {
   });
 
   @override
-  Future<Either<Failure, UserInfo>> getNewUserInfo() async {
-    return Right(UserInfo(
-      ingotCount: 0,
-      currentLevel: 0,
-      currentPickaxeLevel: 0,
-    ));
-  }
-
-  @override
   Future<Either<Failure, UserInfo>> getSavedUserInfo() async {
     try {
       final localUserInfo = await localDataSource.getSavedUserInfo();
@@ -35,11 +24,13 @@ class UserInfoRepositoryImpl implements UserInfoRepository {
   }
 
   @override
-  Future<void> saveUserInfo(UserInfoModel userInfoModel) {
+  Future<Either<Failure, void>> saveUserInfo(
+    UserInfoModel userInfoModel,
+  ) async {
     try {
-      return localDataSource.saveUserInfo(userInfoModel);
+      return Right(localDataSource.saveUserInfo(userInfoModel));
     } on CacheException {
-      return throw Exception();
+      return Left(CacheFailure());
     }
   }
 }

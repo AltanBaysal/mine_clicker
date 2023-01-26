@@ -1,34 +1,41 @@
 import 'dart:async';
 import 'dart:math';
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mine_clicker/core/constants/app_image_paths.dart';
 import 'package:mine_clicker/core/constants/app_sound.dart';
+import 'package:mine_clicker/core/usecases/usecase.dart';
 import 'package:mine_clicker/core/utils/audio_player.dart';
 import 'package:mine_clicker/feature/game/domain/entities/pickaxe.dart';
+import 'package:mine_clicker/feature/game/domain/entities/user_info.dart';
+import 'package:mine_clicker/feature/game/domain/usecases/get_saved_user_info.dart';
+import 'package:mine_clicker/feature/game/domain/usecases/save_user_info.dart';
 import '../domain/entities/blocks.dart';
 
 class GameProvider with ChangeNotifier {
+  //fields
+  final GetSavedUserInfo getSavedUserInfo;
+  final SaveUserInfo saveUserInfo;
+  late UserInfo userInfo;
+  GameProvider({required this.getSavedUserInfo, required this.saveUserInfo});
+
   final _blockBreakingSoundPlayer = SoundPlayer(releaseMode: ReleaseMode.LOOP);
   late Timer _blockBreakingTimer;
 
-  int ingotCount = 999;
-  int _currentLevel = 0;
-  int _currentPickaxeLevel = 0;
-
-  Block get currentBlock => Blocks.inLevelOrder[_currentLevel];
+  //getters
+  Block get currentBlock => Blocks.inLevelOrder[userInfo.currentLevel];
   Block get nextBlock {
     return Blocks.inLevelOrder[min(
-      _currentLevel + 1,
+      userInfo.currentLevel + 1,
       Blocks.inLevelOrder.length - 1,
     )];
   }
 
-  Pickaxe get currentPickaxe => Pickaxes.inLevelOrder[_currentPickaxeLevel];
+  Pickaxe get currentPickaxe =>
+      Pickaxes.inLevelOrder[userInfo.currentPickaxeLevel];
   Pickaxe get nextPickaxe {
     return Pickaxes.inLevelOrder[min(
-      _currentPickaxeLevel + 1,
+      userInfo.currentPickaxeLevel + 1,
       Pickaxes.inLevelOrder.length - 1,
     )];
   }
@@ -38,6 +45,23 @@ class GameProvider with ChangeNotifier {
         _blockBreakLevel,
         AppImages.destroyStages.length - 1,
       )];
+
+  //functions
+  Future<void> getUserInfo() async {
+    final data = await getSavedUserInfo(NoParams());
+    data.fold(
+      (l) {
+        userInfo = UserInfo(
+          ingotCount: 0,
+          currentLevel: 0,
+          currentPickaxeLevel: 0,
+        );
+      },
+      (r) {
+        userInfo = r;
+      },
+    );
+  }
 
   void blockOnPress(LongPressStartDetails longPressStartDetails) {
     _blockBreakingSoundPlayer.play(currentBlock.blockBreakingSound);
@@ -80,31 +104,37 @@ class GameProvider with ChangeNotifier {
     await Future.delayed(const Duration(milliseconds: 350));
     itemCollectSoundPlayer.play(AppSound.itemCollecting);
     await Future.delayed(const Duration(milliseconds: 100));
-    ingotCount += currentBlock.ingotDropRate;
+    userInfo.ingotCount += currentBlock.ingotDropRate;
+    saveUserInfo(UserInfoParams(userInfo));
   }
 
   void upgradeBlock() {
-    if (_currentLevel >= Blocks.inLevelOrder.length - 1) return;
-    if (ingotCount < currentBlock.upgradeCost) return;
+    if (userInfo.currentLevel >= Blocks.inLevelOrder.length - 1) return;
+    if (userInfo.ingotCount < currentBlock.upgradeCost) return;
 
     if (currentBlock.ingotType != nextBlock.ingotType) {
-      ingotCount = 0;
+      userInfo.ingotCount = 0;
     } else {
-      ingotCount -= currentBlock.upgradeCost;
+      userInfo.ingotCount -= currentBlock.upgradeCost;
     }
     final upgradeSoundPlayer = SoundPlayer();
     upgradeSoundPlayer.play(AppSound.upgrade);
-    _currentLevel++;
+    userInfo.currentLevel++;
     notifyListeners();
+    saveUserInfo(UserInfoParams(userInfo));
   }
 
   void upgradePickaxe() {
-    if (_currentPickaxeLevel >= Pickaxes.inLevelOrder.length - 1) return;
-    if (ingotCount < currentPickaxe.upgradeCost) return;
-    ingotCount -= currentPickaxe.upgradeCost;
+    if (userInfo.currentPickaxeLevel >= Pickaxes.inLevelOrder.length - 1) {
+      return;
+    }
+
+    if (userInfo.ingotCount < currentPickaxe.upgradeCost) return;
+    userInfo.ingotCount -= currentPickaxe.upgradeCost;
     final upgradeSoundPlayer = SoundPlayer();
     upgradeSoundPlayer.play(AppSound.itemUpgrade);
-    _currentPickaxeLevel++;
+    userInfo.currentPickaxeLevel++;
     notifyListeners();
+    saveUserInfo(UserInfoParams(userInfo));
   }
 }

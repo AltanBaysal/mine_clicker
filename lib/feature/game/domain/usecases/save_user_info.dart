@@ -11,7 +11,7 @@ class SaveUserInfo implements UseCase<void, UserInfoParams> {
 
   @override
   Future<Either<Failure, void>> call(UserInfoParams params) {
-    throw repository.saveUserInfo(UserInfoModel.fromEntity(params.userInfo));
+    return repository.saveUserInfo(UserInfoModel.fromEntity(params.userInfo));
   }
 }
 

@@ -7,6 +7,7 @@ import "core/init/injection_container.dart" as dp;
 import 'feature/game/view/pages/game_page.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await dp.init();
   runApp(
     MultiProvider(

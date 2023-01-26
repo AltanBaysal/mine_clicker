@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:mine_clicker/feature/game/data/models/user_info_model.dart';
 import 'package:mine_clicker/feature/game/domain/entities/user_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../../../core/constants/keys.dart';
 import '../../../../core/error/exceptions.dart';
 
@@ -18,16 +16,17 @@ class UserInfoLocalDataSourceImpl implements UserInfoLocalDataSource {
 
   @override
   Future<void> saveUserInfo(UserInfoModel userInfoModel) async {
-    sharedPreferences.setString(
-      jsonEncode(userInfoModel.toJson()),
+    await sharedPreferences.setString(
       SharedPreferencesKeys.savedUserInfo,
+      jsonEncode(userInfoModel.toJson()),
     );
   }
 
   @override
   Future<UserInfo> getSavedUserInfo() async {
-    final jsonString =
-        sharedPreferences.getString(SharedPreferencesKeys.savedUserInfo);
+    final jsonString = sharedPreferences.getString(
+      SharedPreferencesKeys.savedUserInfo,
+    );
     if (jsonString != null) {
       return Future.value(UserInfoModel.fromJson(jsonDecode(jsonString)));
     }

@@ -35,7 +35,7 @@ class _GamePageState extends State<GamePage> {
                   ) {
                     return MoneyIndicator(
                       ingotImage: value.currentBlock.ingotImage,
-                      text: value.ingotCount.toString(),
+                      text: value.userInfo.ingotCount.toString(),
                     );
                   },
                 ),

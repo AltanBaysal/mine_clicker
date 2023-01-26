@@ -4,7 +4,6 @@ import '../../../../core/error/failures.dart';
 import '../../data/models/user_info_model.dart';
 
 abstract class UserInfoRepository {
-  Future<Either<Failure, UserInfo>> getNewUserInfo();
   Future<Either<Failure, UserInfo>> getSavedUserInfo();
-  Future<void> saveUserInfo(UserInfoModel userInfoModel);
+  Future<Either<Failure, void>> saveUserInfo(UserInfoModel userInfoModel);
 }
