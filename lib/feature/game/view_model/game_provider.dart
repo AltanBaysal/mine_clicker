@@ -79,7 +79,7 @@ class GameProvider with ChangeNotifier {
     final SoundPlayer soundPlayer = SoundPlayer();
     await soundPlayer.playAndWait(
       currentBlock.blockBreakSound,
-      const Duration(milliseconds: 0),
+      const Duration(milliseconds: 5),
     );
     _blockBreakLevel++;
     notifyListeners();

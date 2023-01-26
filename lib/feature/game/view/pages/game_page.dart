@@ -16,7 +16,6 @@ class _GamePageState extends State<GamePage> {
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Align(
                 alignment: Alignment.centerRight,
