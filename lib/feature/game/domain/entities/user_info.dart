@@ -1,4 +1,6 @@
-class UserInfo {
+import 'package:equatable/equatable.dart';
+
+class UserInfo extends Equatable {
   int ingotCount;
   int currentLevel;
   int currentPickaxeLevel;
@@ -8,4 +10,7 @@ class UserInfo {
     required this.currentLevel,
     required this.currentPickaxeLevel,
   });
+
+  @override
+  List<Object?> get props => [ingotCount, currentLevel, currentPickaxeLevel];
 }

@@ -21,4 +21,11 @@ class UserInfoModel extends UserInfo {
       "ingotCount": ingotCount,
     };
   }
+
+  UserInfoModel.fromEntity(UserInfo userInfo)
+      : super(
+          currentLevel: userInfo.currentLevel,
+          currentPickaxeLevel: userInfo.currentPickaxeLevel,
+          ingotCount: userInfo.ingotCount,
+        );
 }
