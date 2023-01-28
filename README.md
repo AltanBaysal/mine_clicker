@@ -1,2 +1,2 @@
-# mine_clicker
+# Mine Clicker
  
